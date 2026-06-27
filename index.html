@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Friar's Cell - Mini Game</title>
+
+<style>
+body{
+background:#1f1f1f;
+color:white;
+font-family:Arial;
+text-align:center;
+padding:30px;
+}
+
+#game{
+max-width:700px;
+margin:auto;
+background:#2f2f2f;
+padding:25px;
+border-radius:15px;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+font-size:16px;
+cursor:pointer;
+border:none;
+border-radius:10px;
+background:#6d9773;
+color:white;
+}
+
+button:hover{
+background:#86b98d;
+}
+
+h1{
+color:#ffe082;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="game">
+
+<h1>🎙️ Podcast from the Friar's Cell</h1>
+
+<p id="text"></p>
+
+<div id="buttons"></div>
+
+</div>
+
+<script>
+
+let score=0;
+
+const scenes=[
+
+{
+text:"Romeo arrives at your church. He wants to marry Juliet immediately. What do you do?",
+choices:[
+{text:"Help Romeo",score:1},
+{text:"Tell him to wait",score:0}
+]
+},
+
+{
+text:"Juliet asks for help because her family will never accept Romeo.",
+choices:[
+{text:"Give her the sleeping potion",score:1},
+{text:"Try to talk to her parents",score:0}
+]
+},
+
+{
+text:"The families continue fighting.",
+choices:[
+{text:"Send a secret letter to Romeo",score:1},
+{text:"Stay out of the conflict",score:0}
+]
+}
+
+];
+
+let current=0;
+
+function showScene(){
+
+if(current>=scenes.length){
+ending();
+return;
+}
+
+document.getElementById("text").innerHTML=scenes[current].text;
+
+let html="";
+
+scenes[current].choices.forEach(choice=>{
+
+html+=`<button onclick="choose(${choice.score})">${choice.text}</button>`;
+
+});
+
+document.getElementById("buttons").innerHTML=html;
+
+}
+
+function choose(points){
+
+score+=points;
+current++;
+showScene();
+
+}
+
+function ending(){
+
+let message="";
+
+if(score==3){
+
+message="<h2>Ending: Hope</h2><p>You tried to help love overcome hatred. Unfortunately, the tragedy still happened, but your intentions were noble.</p>";
+
+}
+
+else if(score>=1){
+
+message="<h2>Ending: Regret</h2><p>You made difficult choices. Looking back, you still wonder if things could have been different.</p>";
+
+}
+
+else{
+
+message="<h2>Ending: Silence</h2><p>You avoided taking risks, but the hatred between the families continued. Sometimes doing nothing is also a choice.</p>";
+
+}
+
+message+="<br><h3>Final Message</h3><p><i>'Romeo and Juliet were not destroyed by love. They were destroyed by hatred, pride, and silence.'</i></p>";
+
+document.getElementById("text").innerHTML=message;
+
+document.getElementById("buttons").innerHTML='<button onclick="location.reload()">Play Again</button>';
+
+}
+
+showScene();
+
+</script>
+
+</body>
+</html>
