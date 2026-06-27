@@ -1,0 +1,132 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia, serif;
+    background:#111;
+    overflow:hidden;
+    color:white;
+}
+
+#background{
+    position:fixed;
+    inset:0;
+    background-image:url("images/background.jpg");
+    background-size:cover;
+    background-position:center;
+    filter:brightness(0.45);
+    z-index:-2;
+}
+
+#overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.35);
+    z-index:-1;
+}
+
+#game{
+    width:90%;
+    max-width:1000px;
+    margin:30px auto;
+}
+
+header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+h1{
+    color:#f6d365;
+    font-size:40px;
+}
+
+.subtitle{
+    margin-top:10px;
+    font-size:18px;
+    color:#ddd;
+}
+
+#scene{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+#character{
+    width:280px;
+    border-radius:20px;
+    box-shadow:0 0 25px black;
+}
+
+#dialogueBox{
+    background:#efe3bf;
+    color:#222;
+    padding:25px;
+    border-radius:18px;
+    width:100%;
+    min-height:260px;
+    box-shadow:0 0 20px black;
+}
+
+#speaker{
+    color:#6b3d00;
+    margin-bottom:15px;
+}
+
+#dialogue{
+    font-size:20px;
+    line-height:1.6;
+}
+
+#choices{
+    text-align:center;
+    margin-top:30px;
+}
+
+button{
+    background:#7d3c1f;
+    color:white;
+    border:none;
+    padding:16px 35px;
+    font-size:18px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    background:#a04d25;
+}
+
+#stats{
+    margin-top:35px;
+}
+
+.bar{
+    background:#444;
+    height:26px;
+    border-radius:30px;
+    margin-bottom:18px;
+    overflow:hidden;
+    color:white;
+    font-size:14px;
+    line-height:26px;
+    padding-left:10px;
+}
+
+#hopeFill{
+    background:#4caf50;
+    height:100%;
+    width:50%;
+}
+
+#conflictFill{
+    background:#d32f2f;
+    height:100%;
+    width:50%;
+}
