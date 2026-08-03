@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Podcast From The Friar's Cell</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div id="background"></div>
+    <div id="overlay"></div>
+
+    <main id="game">
+
+        <!-- Header -->
+        <header>
+
+            <h1>🎙️ Podcast From The Friar's Cell</h1>
+
+            <p class="subtitle">
+                An Interactive Story Based on Romeo and Juliet
+            </p>
+
+        </header>
+
+        <!-- Progress -->
+        <section id="progressContainer">
+
+            <div class="progressTop">
+
+                <span id="chapter">
+                    Chapter 1
+                </span>
+
+                <span id="sceneCounter">
+                    Scene 1 / 10
+                </span>
+
+            </div>
+
+            <div id="progressBar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+        </section>
+
+        <!-- Main Scene -->
+        <section id="scene">
+
+            <div id="characterContainer">
+
+                <img
+                    id="character"
+                    src="images/friar.png"
+                    alt="Character">
+
+            </div>
+
+            <div id="dialogueBox">
+
+                <h2 id="speaker">
+                    Friar Laurence
+                </h2>
+
+                <p id="dialogue">
+
+                    Welcome...
+
+                    My name is Friar Laurence.
+
+                    Some know me only as the priest from Romeo and Juliet.
+
+                    But for me...
+
+                    It wasn't simply a story.
+
+                    It was my life.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Choices -->
+        <section id="choices">
+
+            <button id="nextButton">
+
+                Begin Story
+
+            </button>
+
+        </section>
+
+        <!-- Stats -->
+        <section id="stats">
+
+            <div class="stat">
+
+                <div class="label">
+
+                    <span>Hope</span>
+
+                    <span id="hopeValue">50%</span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div id="hopeFill"></div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+
+                <div class="label">
+
+                    <span>Conflict</span>
+
+                    <span id="conflictValue">50%</span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div id="conflictFill"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Message after each decision -->
+        <section id="feedback">
+
+            <p id="feedbackText"></p>
+
+        </section>
+
+        <!-- Ending -->
+        <section id="endingBadge">
+
+            <h3 id="endingTitle"></h3>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
